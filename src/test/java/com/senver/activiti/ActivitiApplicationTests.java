@@ -151,6 +151,8 @@ public class ActivitiApplicationTests {
         taskService.setVariableLocal(task.getId(), "请假天数",3);
         taskService.setVariable(task.getId(), "time", new Date());
 
+        //测试github
+
 
     }
 
