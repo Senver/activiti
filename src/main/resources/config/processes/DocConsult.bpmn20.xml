@@ -8,8 +8,13 @@
     <userTask activiti:assignee="王五" activiti:exclusive="true" id="_6" name="总经理"/>
     <sequenceFlow id="_7" sourceRef="_2" targetRef="_4"/>
     <sequenceFlow id="_8" sourceRef="_4" targetRef="_5"/>
-    <sequenceFlow id="_9" sourceRef="_5" targetRef="_6"/>
+    <sequenceFlow id="_9" name="重要事件" sourceRef="_5" targetRef="_6">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[$(message='重要')]]></conditionExpression>
+    </sequenceFlow>
     <sequenceFlow id="_10" sourceRef="_6" targetRef="_3"/>
+    <sequenceFlow id="_11" name="不重要事件" sourceRef="_5" targetRef="_3">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[$(message='不重要')]]></conditionExpression>
+    </sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
     <bpmndi:BPMNPlane bpmnElement="DocConsulst">
